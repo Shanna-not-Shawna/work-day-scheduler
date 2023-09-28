@@ -2,7 +2,56 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-    
+
+  var hourArray = [
+    {
+      "hour": 9,
+      "displayText": "9 AM",
+      "id": "hour-9"
+    },
+    {
+      "hour": 10,
+      "displayText": "10 AM",
+      "id": "hour-10"
+    },
+    {
+      "hour": 11,
+      "displayText": "11 AM",
+      "id": "hour-11"
+    },
+    {
+      "hour": 12,
+      "displayText": "12 PM",
+      "id": "hour-12"
+    },
+    {
+      "hour": 13,
+      "displayText": "1 PM",
+      "id": "hour-13"
+    },
+    {
+      "hour": 14,
+      "displayText": "2 PM",
+      "id": "hour-14"
+    },
+    {
+      "hour": 15,
+      "displayText": "3 PM",
+      "id": "hour-15"
+    },
+    {
+      "hour": 16,
+      "displayText": "4 PM",
+      "id": "hour-16"
+    },
+    {
+      "hour": 17,
+      "displayText": "5 PM",
+      "id": "hour-17"
+    }
+  ]
+  
+
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -23,5 +72,10 @@ $(function () {
     // TODO: Add code to display the current date in the header of the page.
     var currentDay = dayjs().format("dddd, MMMM D");
     $('#currentDay').text(currentDay);
+
+    var currentHour = dayjs().hour();
+
+    // if hourblock is > current hour, then class is future
+    // if hour block is < current hour, then class is past 
   });
   
