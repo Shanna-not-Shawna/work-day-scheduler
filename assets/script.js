@@ -1,6 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
 $(function () {
 
   var hourArray = [
@@ -51,7 +49,29 @@ $(function () {
     }
   ]
   
+function displayHours() {
+    for (const hour of hourArray) {
+      var hourClass = getHourClass(hour);
+      var note = localStorage.getItem(hourNote) || " "
+      var hourCard = $(`
+      <div class="col">
+      <div class="card ${hourClass}">
+          <div class="card-body">
+              <h5 class="card-title">${hour.displayText}</h5>
+              <textarea id=${hourId} class="col-8 col-md-10 description" rows="3">${note}</textarea>
+              <button onclick="saveFriendNote('${hourId}')" class="btn saveBtn col-2 col-md-1" aria-label="save">
+                  <i class="fas fa-save" aria-hidden="true"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+`);
 
+$("#hour-container").append(hourCard);
+      
+      `)
+        }
+}
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
