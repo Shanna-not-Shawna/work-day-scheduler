@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a schedule application that will allow the user to add tasks to their daily work schedule. This project was created with HTML, CSS and JavaScript.
+This is a schedule application that will allow the user to add tasks to their daily work schedule. This project was created with HTML, CSS and jQuery.
 
 
 ## Usage
