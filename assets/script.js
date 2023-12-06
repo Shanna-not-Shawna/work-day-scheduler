@@ -67,9 +67,8 @@ function displayBlocks() {
       var hourId = `${block.hour}_${block.hour}`
       var note = localStorage.getItem(hourId) || ""
       var blockCard = $(`
-          <div class="col">
-              <div class="card ${blockClass}">
-                  <div class="card-body">
+              <div class="row time-block card ${blockClass}">
+                  <div class="col-2 col-md-1 hour text-center py-3">
                       <h5 class="card-title">${block.displayText}</h5>
                       <textarea id=${hourId} class="col-8 col-md-10 description" rows="3">${note}</textarea>
                       <button onclick="saveHourNote('${hourId}')" class="btn saveBtn col-2 col-md-1" aria-label="save">
@@ -77,7 +76,6 @@ function displayBlocks() {
                       </button>
                   </div>
               </div>
-          </div>
       `);
 //add time blocks to container
       $("#hour-container").append(blockCard);
@@ -103,3 +101,6 @@ function getHourClass(hour){
 }
 
 displayBlocks()
+
+//  <div class="col"> 70
+//   </div> 80
